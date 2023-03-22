@@ -3,9 +3,11 @@ package com.epam.rd.autotasks;
 public class CarouselRun {
     protected int currentPosition = 0;
     protected int [] containRunning;
+    protected boolean isHalving;
 
-    public CarouselRun(int[]greenSofa) {
+    public CarouselRun(int[]greenSofa, boolean isHalving) {
         this.containRunning = greenSofa;
+        this.isHalving= isHalving;
     }
 
     public boolean onlyZeros (){
@@ -31,8 +33,14 @@ public class CarouselRun {
         }
 
         int willReturn = containRunning[currentPosition];
+        if(isHalving){
         containRunning[currentPosition] = containRunning[currentPosition]/2;
+        }else{
+            containRunning[currentPosition]--;
+
+        }
         currentPosition++;
+        
 
         if(currentPosition==containRunning.length){
             currentPosition=0;
