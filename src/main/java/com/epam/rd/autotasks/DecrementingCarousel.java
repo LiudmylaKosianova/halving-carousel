@@ -31,7 +31,7 @@ public class DecrementingCarousel {
         
         if (!isAlreadyRun) {
             isAlreadyRun = true;
-            return new CarouselRun(contain);
+            return new CarouselRun(contain, false);
         } else {
             return null;
         }        
